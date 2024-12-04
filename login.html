@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+    <link rel="shortcut icon" href="assets/img/brand-logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/login.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo">
+      <img src="./assets/img/brand-logo.png" alt="Logo">
+      <h3>Students Performance Monitoring System</h3>
+    </div>
+    <div class="login-box">
+      <h2>Login</h2>
+      <div>
+        <!-- Select for Role -->
+        <div class="form-group">
+            <div class="custom-dropdown">
+              <div class="dropdown-selected">
+                Choose Role
+              </div>
+              <ul class="dropdown-options">
+                <li data-value="student">Student</li>
+                <li data-value="teacher">Teacher</li>
+                <li data-value="admin">Admin</li>
+              </ul>
+              <input type="hidden" id="role" name="role" required>
+            </div>
+          </div>
+          
+          
+          
+        <!-- User ID Input -->
+        <div class="form-group">
+          <input type="text" id="user-id" name="user-id" placeholder=" " required>
+          <label for="user-id" class="floating-label">Enter Your ID</label>
+        </div>
+        <!-- Password Input -->
+        <div class="form-group">
+          <input type="password" id="password" name="password" placeholder=" " required>
+          <label for="password" class="floating-label">Enter Your Password</label>
+        </div>
+        <button type="submit" class="login-button">Login</button>
+    </div>
+    </div>
+  </div>
+  <script src="./assets/js/login.js"></script>
+</body>
+</html>

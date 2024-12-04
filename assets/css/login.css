@@ -1,0 +1,293 @@
+/* General Styles */
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  :root {
+    --primary: #002357;
+    --secondary: #d1634a;
+  }
+
+body {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    background: url('../img/school-face.jpg') no-repeat center center/cover;
+    
+  }
+
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* Dark overlay with 70% opacity */
+    z-index: 1; /* Ensures the overlay is above the background but below content */
+  }
+  
+  .login-container {
+    text-align: center;
+    position: absolute;
+    z-index: 10;    /* content above the background and overlay */
+    margin: 10px;
+  }
+  
+  .logo img {
+    max-width: 200px;
+    margin-bottom: 1rem;
+  }
+
+  .logo h3 {
+    color: var(--primary);
+  }
+
+  
+  .login-box {
+    margin: 20px auto;
+    background-color: var(--primary);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+    max-width: 500px;
+  }
+  
+  .login-box h2 {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    position: relative;
+    margin-bottom: 35px;
+    
+  }
+  
+  /* Input Styles */
+  input {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 16px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+  }
+  
+  input::placeholder {
+    color: transparent;
+  }
+  
+  /* Label Styles */
+  .floating-label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+  }
+  
+  input:focus + .floating-label,
+  input:not(:placeholder-shown) + .floating-label {
+    top: -10px;
+    font-size: 12px;
+    color: var(--secondary);
+  }
+  
+ 
+
+/* my custome select */
+
+.custom-dropdown {
+    width: 50%;
+    margin: auto;
+    position: relative;
+    font-family: Arial, sans-serif;
+    color: black;
+  }
+  
+  /* Selected Option */
+  .dropdown-selected {
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    position: relative;
+  }
+  
+  /* Caret Style (angle-down symbol) */
+  .dropdown-selected::after {
+    content: '▼'; /* Angle down symbol */
+    font-size: 16px;
+    color: var(--secondary);
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Dropdown Options */
+ /* Custom Select Dropdown */
+.custom-dropdown {
+    width: 50%;
+    margin: auto;
+    position: relative;
+    font-family: Arial, sans-serif;
+    color: var(--secondary);
+  }
+  
+  .dropdown-selected {
+    background-color: transparent;
+    border: 2px solid var(--secondary);
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .caret {
+    font-size: 14px;
+    color: black;
+    margin-left: 10px;
+  }
+  
+  .dropdown-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    border: 1px solid var(--secondary);
+    border-top: none;
+    background-color: white;
+    display: none;
+    z-index: 10;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  
+  .dropdown-options li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-options li:hover {
+    background-color: #e2e2e2;
+  }
+  
+  .custom-dropdown.open .dropdown-options {
+    display: block;
+  }
+  
+  
+  /* Animation */
+  .custom-dropdown .dropdown-options {
+    animation: fadeIn 0.2s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Rotate caret when the dropdown is open */
+  .custom-dropdown.open .dropdown-selected::after {
+    transform: rotate(180deg); /* Rotate caret when the dropdown is open */
+  }
+  
+
+ 
+ /* Button Styles */
+
+
+
+ .login-button {
+    width: 50%;
+    padding: 10px;
+    margin: 2rem 1rem auto;
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-image: linear-gradient(90deg, var(--secondary), transparent, var(--secondary), transparent) 1;
+    border-image-slice: 1;
+    animation: draw-round 1s linear infinite;
+  }
+  
+  .login-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--secondary);
+    transition: width 0.3s ease;
+    z-index: -1;
+  }
+  
+  .login-button:hover::before {
+    width: 100%;
+  }
+  
+  .login-button:hover {
+    background-color: var(--secondary);
+    color: white;
+    box-shadow: 0 0 8px var(--secondary);
+  }
+  
+  .login-button:focus {
+    outline: none;
+  }
+  
+  .login-button-border {
+    animation: draw-border 1s linear infinite;
+  }
+  
+  @keyframes draw-round {
+    0% {
+      border-image-source: linear-gradient(90deg, var(--secondary), transparent);
+    }
+    25% {
+      border-image-source: linear-gradient(180deg, var(--secondary), transparent);
+    }
+    50% {
+      border-image-source: linear-gradient(270deg, var(--secondary), transparent);
+    }
+    75% {
+      border-image-source: linear-gradient(360deg, var(--secondary), transparent);
+    }
+    100% {
+      border-image-source: linear-gradient(90deg, var(--secondary), transparent);
+    }
+  }
+
